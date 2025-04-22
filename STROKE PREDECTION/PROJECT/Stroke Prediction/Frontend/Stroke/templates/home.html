@@ -1,0 +1,271 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+  <title>STROKE PREDICTION</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      background-image: url('https://static.vecteezy.com/system/resources/previews/005/182/612/non_2x/green-abstract-geometric-shape-background-free-vector.jpg');
+      background-size: cover;
+      font-family: 'Times New Roman', Times, serif;
+      color: #333;
+    }
+
+    .jumbotron {
+      background-color: rgba(255, 255, 255, 0.8);
+    }
+
+    .jumbotron h1 {
+      color: #4B0082; /* Indigo */
+    }
+
+    .jumbotron p {
+      color: #000080; /* Navy */
+    }
+
+    .card-title {
+      color: #FF4500; /* OrangeRed */
+    }
+
+    .container h3 {
+      color: #260775; /* SteelBlue */
+    }
+
+    .container p {
+      color: #d41010; /* SeaGreen */
+    }
+
+    .text-center {
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    /* Chatbot button styling */
+    #chatbot-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #4B0082;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      padding: 15px;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 60px;
+      height: 60px;
+    }
+
+    #chatbot-button img {
+      width: 30px; /* Adjust according to logo size */
+      height: 30px;
+    }
+
+    #chatbox {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 300px;
+      background-color: #fff;
+      border: 1px solid #4B0082;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+    }
+
+    #chatbox-header {
+      background-color: #4B0082;
+      color: white;
+      padding: 10px;
+      border-radius: 8px 8px 0 0;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    #chatbox-body {
+      max-height: 300px;
+      overflow-y: auto;
+      padding: 10px;
+      height: 300px;
+      font-size: 14px;
+    }
+
+    #chatbox-body .user-message {
+      background-color: #DCF8C6;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      text-align: left;
+      max-width: 75%;
+      font-weight: bold;
+      color: #000;
+    }
+
+    #chatbox-body .bot-message {
+      background-color: #ECE5DD;
+      padding: 10px;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      text-align: left;
+      max-width: 75%;
+      color: #000;
+    }
+
+    #chatbox-body .ai-message {
+      background-color: #D1E8E2;
+      border-radius: 10px;
+      margin-bottom: 10px;
+      text-align: left;
+      max-width: 75%;
+      font-weight: normal;
+    }
+
+    #chatbox-input {
+      border-top: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    #chatbox-input input {
+      width: 100%;
+      border: none;
+      outline: none;
+      padding: 10px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="jumbotron text-center">
+  <h1>STROKE PREDICTION</h1>
+  <p>Using advanced technology to predict and monitor Stroke Prediction for a safer and healthier environment.</p>
+</div>
+<div class="col-md-8 offset-2">
+  <div class="row text-center">
+    <div class="col-sm-4">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWzWaRj_wthuLe6ccfLyP9kmYgXzH2mU5Ptg5ndwXdEpBzf4C9J2ySnQwKTHO0GAZ_d9M&usqp=CAU  " alt="Water Testing" class="img-fluid rounded">
+    </div>
+    <div class="col-sm-4">
+      <img src="https://img.freepik.com/premium-photo/3d-illustration-human-brain_946823-8323.jpg" alt="Water Monitoring" class="img-fluid rounded">
+    </div>
+    <div class="col-sm-4">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpU8kG4QpKbjJt9l68Qh2JRWGqoKKUxem234TN5umIZv-iRwZaSpPxQNur42uGWtq_FXU&usqp=CAU" alt="Water Analysis" class="img-fluid rounded">
+    </div>
+  </div>
+</div><br><br>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4 text-center">
+      <h3>The Importance of Stroke Prediction</h3>
+      <p>Stroke prediction helps in identifying high-risk individuals, enabling early intervention and reducing the risk of severe health consequences.</p>
+    </div>
+    <div class="col-sm-4 text-center">
+      <h3>Predictive Models</h3>
+      <p>Advanced machine learning and statistical models are used to predict stroke risk, assisting healthcare professionals in timely decision-making.</p>
+    </div>
+    <div class="col-sm-4 text-center">
+      <h3>Applications</h3>
+      <p>Stroke prediction models are crucial in clinical settings, helping to monitor at-risk patients and optimize preventive healthcare strategies.</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- Chatbot Button with Logo -->
+<button id="chatbot-button">
+  <img src="https://www.chatlab.com/staticimg/logo/logo_square_pink_gradient_transparent_background.png" alt="Chatbot Logo">
+</button>
+
+<!-- Chatbot Modal -->
+<div id="chatbox">
+  <div id="chatbox-header">AI Chatbot</div>
+  <div id="chatbox-body"></div>
+  <div id="chatbox-input">
+    <input type="text" id="user-input" placeholder="Type your message..." />
+  </div>
+</div>
+
+<script>
+  // Chatbot responses
+  const responses = {
+    "hello": "hello! how can i assist you with stroke prediction today?",
+    "what is stroke prediction": "stroke prediction involves using data analysis and machine learning models to assess the risk of stroke in individuals based on factors like age, blood pressure, cholesterol levels, and medical history.",
+    "hi": "hello! how can i assist you with stroke prediction today?",
+    "hey": "hello! how can i assist you with stroke prediction today?",
+    "how are you": "i'm an ai assistant, so i don't have feelings, but thanks for asking!",
+    "stroke prediction": "stroke prediction refers to the process of identifying individuals at high risk for stroke by analyzing various health parameters such as blood pressure, glucose levels, and lifestyle factors.",
+    "predict stroke risk": "we use machine learning models to predict the likelihood of a stroke based on health factors like age, hypertension, diabetes, and other medical conditions.",
+    "goodbye": "goodbye! stay healthy and take care!",
+    "what are the risk factors for stroke?": "common risk factors for stroke include high blood pressure, high cholesterol, smoking, diabetes, family history, and a sedentary lifestyle.",
+    "how can i prevent a stroke?": "stroke prevention involves managing risk factors like controlling blood pressure, eating a healthy diet, exercising regularly, and avoiding smoking and excessive alcohol consumption.",
+    "what are the symptoms of a stroke?": "common symptoms include sudden numbness or weakness, confusion, trouble speaking or understanding speech, difficulty seeing, and loss of balance or coordination.",
+    "how is stroke diagnosed?": "stroke is diagnosed through a combination of medical history, physical examination, and imaging tests such as CT scans or MRIs to assess brain function and damage.",
+    "can stroke be treated?": "yes, strokes can be treated depending on the type and severity. treatments may include medications, surgery, and rehabilitation therapy to help with recovery.",
+    "what is ischemic stroke?": "ischemic stroke occurs when a blood clot blocks or narrows an artery leading to the brain, reducing blood flow and causing brain tissue damage.",
+    "what is hemorrhagic stroke?": "hemorrhagic stroke happens when a blood vessel in the brain bursts, leading to bleeding in or around the brain, which can cause brain damage.",
+    "what lifestyle changes can reduce stroke risk?": "lifestyle changes like eating a balanced diet, exercising regularly, reducing alcohol intake, and managing stress can significantly lower the risk of stroke.",
+    "how often should i get checked for stroke risk?": "it's recommended to have regular health checkups, especially if you have risk factors like high blood pressure, diabetes, or a family history of stroke."
+};
+
+function getResponse(input) {
+    input = input.toLowerCase().trim(); // Normalize input
+    return responses[input] || "I'm sorry, I didn't understand that. Can you please rephrase?";
+}
+
+// Test the function with some inputs
+console.log(getResponse("stroke prediction")); // Expected response: "stroke prediction refers to ..."
+console.log(getResponse("predict stroke risk")); // Expected response: "we use machine learning ..."
+
+
+
+  // Display user message
+  function displayUserMessage(message) {
+    const userMessageDiv = document.createElement("div");
+    userMessageDiv.classList.add("user-message");
+    userMessageDiv.textContent = message;
+    document.getElementById("chatbox-body").appendChild(userMessageDiv);
+  }
+
+  // Display bot message
+  function displayBotMessage(message) {
+    const botMessageDiv = document.createElement("div");
+    botMessageDiv.classList.add("bot-message");
+    botMessageDiv.textContent = message;
+    document.getElementById("chatbox-body").appendChild(botMessageDiv);
+  }
+
+  // Send message to chatbot
+  document.getElementById("user-input").addEventListener("keypress", function (e) {
+    if (e.key === "Enter") {
+      const userInput = e.target.value;
+      displayUserMessage(userInput);
+      e.target.value = "";
+
+      // Respond based on predefined responses or default message
+      const botResponse = responses[userInput.toLowerCase()] || "I'm sorry, I didn't understand that. Can you please rephrase?";
+      setTimeout(() => displayBotMessage(botResponse), 500);
+    }
+  });
+
+  // Toggle chatbot visibility
+  document.getElementById("chatbot-button").addEventListener("click", function () {
+    const chatbox = document.getElementById("chatbox");
+    chatbox.style.display = chatbox.style.display === "none" ? "block" : "none";
+  });
+</script>
+
+</body>
+{% endblock %}

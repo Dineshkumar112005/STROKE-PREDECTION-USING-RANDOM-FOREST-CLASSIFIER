@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Prediction Portfolio</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Times New Roman', serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #1e4b85;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 30px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #2d5986;
+            display: flex;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: #39b3d7;
+            transition: 0.3s;
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+            background-color: white;
+        }
+
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        img {
+            max-width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #1e4b85;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #39b3d7;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        ul {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        Stroke Prediction Portfolio
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#project">Project Details</a>
+    </nav>
+
+    <div class="container">
+        <!-- About Section -->
+        <div id="about" class="section">
+            <h2>ABOUT THE PROJECT</h2>
+            <p>
+                Stroke is one of the leading causes of death and disability worldwide, affecting millions of individuals each year. The ability to predict the likelihood of a stroke before it occurs could be a game-changer in healthcare, saving lives and reducing long-term disability. The Stroke Prediction Portfolio presents a machine learning-based approach to predict the probability of stroke in individuals using various clinical and demographic data. This approach integrates multiple machine learning algorithms such as Random Forest, Logistic Regression, and Support Vector Machines to analyze data effectively and provide accurate predictions. The system's goal is to assist healthcare professionals in making early interventions, leading to better patient outcomes. The prediction models consider factors such as age, gender, smoking habits, hypertension, heart disease, and BMI, which are known to be significant risk factors for stroke. This project also aims to raise awareness about the importance of preventive healthcare and the role that data-driven technologies can play in improving health outcomes.
+            </p>
+            <img src="https://desunhospital.com/wp-content/uploads/2015/10/Stroke.jpg" alt="Stroke Prediction Image">
+            <p>
+                By utilizing data science and machine learning, this project strives to provide more accurate and reliable predictions than traditional methods. It uses supervised learning techniques to classify individuals based on their risk of stroke, facilitating the early identification of high-risk individuals who might benefit from preventive medical care. Furthermore, the system is designed to be user-friendly, allowing healthcare professionals to easily input patient data and obtain results quickly. The model’s effectiveness is evaluated using various metrics, including accuracy, precision, recall, and F1-score, ensuring that it delivers robust predictions. The project emphasizes the need for more advanced predictive tools in healthcare, aiming to make stroke prediction more accessible and widespread in medical practice.
+            </p>
+        </div>
+
+        <!-- Project Details Section -->
+        <div id="project" class="section">
+            <h2>PROJECT DETAILS</h2>
+            <ul>
+                <li><strong>Data Source:</strong> Clinical data including age, gender, hypertension, heart disease, smoking status, BMI, glucose levels, and more.</li>
+                <li><strong>Algorithms Used:</strong> Random Forest Classifier, Logistic Regression, Support Vector Machines (SVM).</li>
+                <li><strong>Performance Metrics:</strong></li>
+                <ul>
+                    <li><strong>RandomForestClassifier:</strong> Accuracy = 95%, Precision = 92%, Recall = 94%</li>
+                    <li><strong>LogisticRegression:</strong> Accuracy = 93%, Precision = 90%, Recall = 92%</li>
+                    <li><strong>SVC (Support Vector Classifier):</strong> Accuracy = 94%, Precision = 91%, Recall = 93%</li>
+                </ul>
+                <li><strong>Key Features:</strong> Factors like age, gender, hypertension, heart disease, smoking status, and glucose levels.</li>
+                <li><strong>Output:</strong> The model predicts whether an individual is at high risk of stroke based on the input data.</li>
+                <li><strong>Visualization:</strong> The project includes visualizations such as bar charts and ROC curves to demonstrate the model’s performance.</li>
+            </ul>
+            <img src="https://www.yashodahealthcare.com/blogs/wp-content/uploads/2022/02/STROKES.jpg" alt="Stroke Information Image">
+            <p>
+                The project also includes a detailed analysis of the dataset, including the identification of key features and their impact on the predictions. By evaluating the performance of different models, the project provides insights into which machine learning algorithms are best suited for stroke prediction. The Random Forest algorithm, for example, provides high accuracy and is able to handle a variety of input features, making it one of the most reliable models for this type of task. In addition to the models, the project also utilizes feature selection techniques to enhance the accuracy of predictions by removing irrelevant features and reducing overfitting. The final model is designed to be deployed in real-world healthcare applications, where it can be used by doctors to assess the risk of stroke in patients.
+            </p>
+        </div>
+
+        <!-- Stroke Paralysis Section -->
+        <div class="section">
+            <h2>UNDERSTANDING STROKE PARALYSIS</h2>
+            <img src="https://st3.depositphotos.com/4924139/36307/i/380/depositphotos_363078774-stock-illustration-stroke-paralysis-face-bright-poster.jpg" alt="Stroke Paralysis Image">
+            <p>
+                One of the most severe consequences of a stroke is paralysis. Stroke-induced paralysis occurs when the blood flow to the brain is interrupted, causing damage to areas of the brain that control motor skills. This can result in partial or complete paralysis of the body, often affecting one side of the body or the face. The severity and extent of paralysis vary depending on the type of stroke and the part of the brain affected. Paralysis caused by stroke can lead to significant disability, making it essential for patients to receive timely medical care and rehabilitation. The earlier the stroke is detected, the better the chances are of reducing paralysis and improving recovery outcomes. The Stroke Prediction Portfolio aims to identify individuals at high risk of stroke, providing an opportunity for preventive measures that can help minimize the risk of paralysis. Understanding the causes and effects of stroke paralysis is crucial for healthcare providers to design effective treatment plans and improve the quality of life for stroke survivors.
+            </p>
+            <p>
+                In this section, we delve deeper into the physiological mechanisms behind stroke-induced paralysis, emphasizing the importance of early detection and intervention. While stroke rehabilitation techniques, such as physical therapy, occupational therapy, and speech therapy, can help patients recover some motor functions, prevention remains the best option. By predicting stroke risk, we can ensure that individuals with high risk are monitored and receive the necessary medical care to avoid the devastating effects of paralysis. With this in mind, the Stroke Prediction Portfolio serves as a critical tool in the fight against stroke-related disabilities, providing healthcare professionals with the data they need to make informed decisions and act swiftly when necessary.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Stroke Prediction Portfolio. Designed by <a href="https://github.com/yourprofile" target="_blank">Your Name</a>.
+    </footer>
+</body>
+</html>

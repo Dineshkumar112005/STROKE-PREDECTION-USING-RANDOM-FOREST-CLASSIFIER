@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Prediction</title>
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Times New Roman', serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: #2d3e50;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #2e14a5;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin: 0;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        h2, h3 {
+            font-weight: bold;
+            font-size: 28px;
+            color: #2980b9;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+        p {
+            color: white;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #c30a85;
+        }
+        .back-btn {
+            margin: 20px 40px;
+            padding: 10px 20px;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background-color: #2c3e50;
+        }
+        .content-section {
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            margin: 30px;
+            box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s ease;
+        }
+        .content-section:hover {
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15);
+        }
+        footer {
+            background-color: #2f659a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .highlight-text {
+            font-weight: bold;
+            color: #e74c3c;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+        .section-heading {
+            background-color: #ecf0f1;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #2980b9;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+        }
+        .graph-img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        .chart-container {
+            position: relative;
+            height: 400px;
+            width: 80%;
+            margin: auto;
+        }
+        .image-container {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            width: 80%;
+            border-radius: 10px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Stroke Prediction</h1>
+        <p>Using Machine Learning Algorithms to Predict Stroke Risk</p>
+    </header>
+
+    <div>
+        <section class="content-section">
+            <h2 class="section-heading">Introduction to Stroke Prediction</h2>
+            <p>
+                Stroke is one of the leading causes of death and disability worldwide. Early detection and prediction of stroke can significantly improve the chances of survival and recovery. A stroke occurs when the blood flow to a part of the brain is interrupted, leading to brain damage. Key risk factors include age, hypertension, smoking, diabetes, family history, and lifestyle choices.
+            </p>
+            <p>
+                In recent years, machine learning (ML) techniques have been used to predict the likelihood of stroke based on various health factors. These algorithms can analyze large datasets containing medical records and personal health data to identify patterns and predict future stroke events.
+            </p>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-heading">Algorithms for Stroke Prediction</h2>
+            <p>
+                Several machine learning algorithms can be used to predict stroke risk. Below are the three main algorithms that have shown excellent performance in predicting stroke:
+            </p>
+            <ul>
+                <li><strong>RandomForestClassifier:</strong> Accuracy = 95%</li>
+                <li><strong>LogisticRegression:</strong> Accuracy = 95%</li>
+                <li><strong>SVC (Support Vector Classifier):</strong> Accuracy = 95%</li>
+            </ul>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-heading">1. Random Forest Classifier</h2>
+            <p>
+                The Random Forest Classifier is an ensemble learning method that combines multiple decision trees to improve accuracy and reduce overfitting. Each tree in the forest is trained on a random subset of the data, and the final prediction is based on the majority vote from all trees.
+            </p>
+            <p>
+                Random Forest performs well on complex datasets, making it a suitable choice for stroke prediction, where the relationships between features (age, blood pressure, etc.) can be non-linear and intricate.
+            </p>
+            <div class="chart-container">
+                <canvas id="randomForestChart"></canvas>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-heading">2. Logistic Regression</h2>
+            <p>
+                Logistic Regression is a linear model used for binary classification tasks. It estimates the probability that a given input belongs to a particular class. In stroke prediction, the two classes are "stroke" and "no stroke." 
+            </p>
+            <p>
+                Despite being a simpler model compared to Random Forest, Logistic Regression can still yield strong performance when the data is linearly separable. It is especially useful for understanding the contribution of each feature in making predictions.
+            </p>
+            <div class="chart-container">
+                <canvas id="logisticRegressionChart"></canvas>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-heading">3. Support Vector Classifier (SVC)</h2>
+            <p>
+                The Support Vector Classifier (SVC) is a powerful classification algorithm that attempts to find the hyperplane that best separates the data into different classes. In the case of stroke prediction, the goal is to classify individuals into those who are at risk and those who are not.
+            </p>
+            <p>
+                SVC is particularly effective in high-dimensional spaces, making it suitable for stroke prediction when numerous features are involved. It can also perform well in non-linear classification tasks by using the kernel trick.
+            </p>
+            <div class="chart-container">
+                <canvas id="svcChart"></canvas>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 class="section-heading">Comparing Model Performance</h2>
+            <p>
+                To evaluate the performance of the three algorithms, we measure accuracy, precision, recall, and F1-score. Accuracy tells us how well the model is performing overall, while precision and recall provide insights into how well the model distinguishes between classes (stroke vs. no stroke).
+            </p>
+            <div class="chart-container">
+                <canvas id="comparisonChart"></canvas>
+            </div>
+        </section>
+
+        <button class="back-btn" onclick="window.history.back()">Back</button>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Stroke Prediction Project. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Random Forest Chart
+        var ctx = document.getElementById('randomForestChart').getContext('2d');
+        var randomForestChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Accuracy', 'Precision', 'Recall', 'F1-Score'],
+                datasets: [{
+                    label: 'Random Forest Classifier',
+                    data: [95, 92, 93, 94],
+                    backgroundColor: '#2980b9',
+                    borderColor: '#2980b9',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Logistic Regression Chart
+        var ctx2 = document.getElementById('logisticRegressionChart').getContext('2d');
+        var logisticRegressionChart = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Accuracy', 'Precision', 'Recall', 'F1-Score'],
+                datasets: [{
+                    label: 'Logistic Regression',
+                    data: [95, 91, 92, 94],
+                    backgroundColor: '#e74c3c',
+                    borderColor: '#e74c3c',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // SVC Chart
+        var ctx3 = document.getElementById('svcChart').getContext('2d');
+        var svcChart = new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: ['Accuracy', 'Precision', 'Recall', 'F1-Score'],
+                datasets: [{
+                    label: 'Support Vector Classifier',
+                    data: [95, 93, 94, 94],
+                    backgroundColor: '#27ae60',
+                    borderColor: '#27ae60',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        // Model Comparison Chart
+        var ctx4 = document.getElementById('comparisonChart').getContext('2d');
+        var comparisonChart = new Chart(ctx4, {
+            type: 'bar',
+            data: {
+                labels: ['Random Forest', 'Logistic Regression', 'SVC'],
+                datasets: [{
+                    label: 'Model Accuracy Comparison',
+                    data: [95, 95, 95],
+                    backgroundColor: ['#2980b9', '#e74c3c', '#27ae60'],
+                    borderColor: ['#2980b9', '#e74c3c', '#27ae60'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
